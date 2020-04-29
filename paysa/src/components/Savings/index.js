@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
     	alignItems: 'center',
     	margin: 20,
   },
- 
-  CircleShapeView: {
+	
+	button: {
     	width: 200,
     	height: 200,
 		borderRadius: 200/2,
@@ -30,34 +30,32 @@ const styles = StyleSheet.create({
     	shadowOffset: { width: 0, height: 1 },
     	shadowOpacity: 0.8,
     	shadowRadius: 2,
+    	alignItems: 'center',
+		justifyContent: 'center',
   },
 	
-	view: {
-		fontSize: 30,
-		color: '#fff',
-		marginLeft:53,
-		marginTop:50,
-	},
-	
-	balance:{
-		fontSize: 30,
-		color: '#fff',
-		marginLeft:35,
-	},
+  	buttonText: {
+	  	fontSize:30,
+    	color: 'white'
+  },
 });
 
-export function Savings() {
+export  class Savings extends Component {
+	onPressButton() {
+    alert('You tapped the button!')
+  }
+	render(){
   return (
-    <View style={{flex: 1,backgroundColor:"white"}}>
-	  
-	  <View style={styles.container}>
-	  	<View style={styles.CircleShapeView}>
-	  		<Text style={styles.view}> View </Text>
-	  		<Text style={styles.balance}> Balance </Text>
-	  	</View>
-	  </View>
-	  <View style = {styles.container}>
-	  	</View>
-    </View>
+	<View style={{flex:1,backgroundColor:'#fff'}}>
+		<View style={styles.container}>
+			<TouchableHighlight onPress={this.onPressButton} underlayColor="#fff">
+			  <View style={styles.button}>
+				<Text style={styles.buttonText}>View</Text>
+				<Text style={styles.buttonText}>Balance</Text>
+			  </View>
+			</TouchableHighlight>
+		</View>
+	</View>
   );
+}
 }
