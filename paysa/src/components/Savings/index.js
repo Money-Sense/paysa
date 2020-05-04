@@ -1,61 +1,69 @@
 import React, {Component} from 'react';
-import {StyleSheet,
-    View,
-    Text,
-    ScrollView,
-    Image,
-    TouchableHighlight,
-	   Button} from 'react-native';
+import {StyleSheet,View,Text,TouchableHighlight,ScrollView} from 'react-native';
+import {Colors} from 'react-native-paper';
 
 import {commonStyles} from '../Common/common.styles';
+import {SaveButton} from '../Savings/savebutton';
+import {Lists} from '../Savings/list';
+import {AddButton} from '../Savings/addbutton';
+import {Popup} from '../Savings/popup';
 
 const styles = StyleSheet.create({
 	
-	container: {
-    	flex: 1,
+	buttonContainer:{
+		flex:1,
+		flexDirection: 'row',
     	alignItems: 'center',
-    	margin: 20,
-  },
-	
-	button: {
-    	width: 200,
-    	height: 200,
-		borderRadius: 200/2,
-		borderWidth:10,
-		borderColor:'#663BFF',
-		backgroundColor: '#663BFF',
-	  	shadowColor:'black',
+    	justifyContent: 'center',
+	},
+
+	listContainer:{
+		flex:2,
+		margin:20,
+		height:460,
+		backgroundColor:'#fff',
+		shadowColor:'black',
+		borderRadius:10,
 	  	elevation: 5,
 	  	shadowColor: '#000',
     	shadowOffset: { width: 0, height: 1 },
     	shadowOpacity: 0.8,
     	shadowRadius: 2,
-    	alignItems: 'center',
-		justifyContent: 'center',
-  },
+	},
 	
-  	buttonText: {
-	  	fontSize:30,
-    	color: 'white'
-  },
+	
+	historyContainer: {
+		justifyContent:'center',
+		alignItems:'center',
+		backgroundColor:'#663BFF',
+		borderTopLeftRadius:10,
+		borderTopRightRadius:10,
+		height:60,
+	},
+	
+	historyText: {
+		fontSize:25,
+		color:'#fff',
+	}
 });
 
-export  class Savings extends Component {
-	onPressButton() {
-    alert('You tapped the button!')
-  }
-	render(){
+export function Savings(){
+	
   return (
-	<View style={{flex:1,backgroundColor:'#fff'}}>
-		<View style={styles.container}>
-			<TouchableHighlight onPress={this.onPressButton} underlayColor="#fff">
-			  <View style={styles.button}>
-				<Text style={styles.buttonText}>View</Text>
-				<Text style={styles.buttonText}>Balance</Text>
-			  </View>
-			</TouchableHighlight>
-		</View>
-	</View>
+	  <View style={{flex:1,backgroundColor:"#fff"}}>
+	  	<View style={styles.buttonContainer}>
+			<SaveButton/>
+	  		<AddButton/>
+	  	</View>
+			<View style = {styles.listContainer}>
+	  			<View style = {styles.historyContainer}>
+	  				<Text style={styles.historyText}>Savings History</Text>
+	  			</View>
+	  			<ScrollView>
+					<Lists/>
+	  			</ScrollView>
+			</View>
+	  </View>
   );
-}
+
 }

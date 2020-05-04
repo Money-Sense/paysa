@@ -51,6 +51,25 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>/Users/naveenkumarnr/Documents/GitHub/paysa/paysa/ios/paysa/Fonts/FontAwesome.ttf</string>
+		<string>/Users/naveenkumarnr/Documents/GitHub/paysa/paysa/ios/paysa/Fonts/Foundation.ttf</string>
+		<string>/Users/naveenkumarnr/Documents/GitHub/paysa/paysa/ios/paysa/Fonts/Ionicons.ttf</string>
+		<string>/Users/naveenkumarnr/Documents/GitHub/paysa/paysa/ios/paysa/Fonts/MaterialIcons.ttf</string>
+		<string>/Users/naveenkumarnr/Documents/GitHub/paysa/paysa/ios/paysa/Fonts/AntDesign.ttf</string>
+		<string>/Users/naveenkumarnr/Documents/GitHub/paysa/paysa/ios/paysa/Fonts/Entypo.ttf</string>
+		<string>/Users/naveenkumarnr/Documents/GitHub/paysa/paysa/ios/paysa/Fonts/EvilIcons.ttf</string>
+		<string>/Users/naveenkumarnr/Documents/GitHub/paysa/paysa/ios/paysa/Fonts/Feather.ttf</string>
+		<string>/Users/naveenkumarnr/Documents/GitHub/paysa/paysa/ios/paysa/Fonts/FontAwesome5_Brands.ttf</string>
+		<string>/Users/naveenkumarnr/Documents/GitHub/paysa/paysa/ios/paysa/Fonts/FontAwesome5_Regular.ttf</string>
+		<string>/Users/naveenkumarnr/Documents/GitHub/paysa/paysa/ios/paysa/Fonts/FontAwesome5_Solid.ttf</string>
+		<string>/Users/naveenkumarnr/Documents/GitHub/paysa/paysa/ios/paysa/Fonts/Fontisto.ttf</string>
+		<string>/Users/naveenkumarnr/Documents/GitHub/paysa/paysa/ios/paysa/Fonts/MaterialCommunityIcons.ttf</string>
+		<string>/Users/naveenkumarnr/Documents/GitHub/paysa/paysa/ios/paysa/Fonts/Octicons.ttf</string>
+		<string>/Users/naveenkumarnr/Documents/GitHub/paysa/paysa/ios/paysa/Fonts/SimpleLineIcons.ttf</string>
+		<string>/Users/naveenkumarnr/Documents/GitHub/paysa/paysa/ios/paysa/Fonts/Zocial.ttf</string>
+	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>
