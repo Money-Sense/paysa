@@ -6,7 +6,6 @@ import {commonStyles} from '../Common/common.styles';
 import {SaveButton} from '../Savings/savebutton';
 import {Lists} from '../Savings/list';
 import {AddButton} from '../Savings/addbutton';
-import {Popup} from '../Savings/popup';
 
 const styles = StyleSheet.create({
 	
