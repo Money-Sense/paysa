@@ -1,19 +1,97 @@
-import React, {Component} from 'react';
-import {StyleSheet,View,Text,TouchableHighlight} from 'react-native';
-import {Colors} from 'react-native-paper';
+import React, { Component, useState } from "react";
+import {
+  Alert,
+  Modal,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  TouchableOpacity,
+  findNodeHandle,
+  Switch,
+  View
+} from "react-native";
+import { TextInput } from 'react-native-paper';
+import { BlurView } from '@react-native-community/blur';
 
-import {commonStyles} from '../Common/common.styles';
+import {Input} from '../Savings/textinput';
+
+export function SaveButton () {
+  const [modalVisible, setModalVisible] = useState(false);
+  return (
+    <View style={styles.centeredView}>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+        }}
+      >
+          <View style={styles.modalView}>
+            <Input/>
+
+            <TouchableHighlight underlayColor='Colors.grey200' 
+              style={styles.openButton}
+              onPress={() => {
+                setModalVisible(modalVisible);
+              }}
+            >
+              <Text style={styles.textStyle}>SAVE</Text>
+            </TouchableHighlight>
+
+			<TouchableHighlight underlayColor='Colors.grey200' 
+              style={styles.openButton}
+              onPress={() => {
+                setModalVisible(!modalVisible);
+              }}
+            >
+              <Text style={styles.textStyle}>CANCEL</Text>
+            </TouchableHighlight>
+          </View>
+      </Modal>
+
+      <TouchableHighlight underlayColor='Colors.grey200'
+        onPress={() => {
+          setModalVisible(true);
+        }}
+      >
+		   <View style={styles.button}>
+				<Text style={styles.buttonText}>Save</Text>
+				<Text style={styles.buttonText}>Money</Text>
+			</View>
+      </TouchableHighlight>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-
-	buttonContainer:{
-		flex:1,
-		flexDirection: 'row',
-    	alignItems: 'center',
-    	justifyContent: 'center',
-	},
+  centeredView: {
+	  alignItems:'center',
+      justifyContent: "center",
+  },
 	
-	button: {
+  modalView: {
+    margin: 40,
+	marginTop:350,
+    backgroundColor: "white",
+	justifyContent: "center",
+    borderRadius: 20,
+    padding: 25,
+    elevation: 5,
+	shadowColor: '#000',
+   	shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+  },
+  openButton: {
+    backgroundColor: "#663BFF",
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+	marginTop: 20,
+  },
+	
+button: {
     	width: 170,
     	height: 170,
 		margin: 20,
@@ -30,57 +108,26 @@ const styles = StyleSheet.create({
     	alignItems: 'center',
 		justifyContent: 'center',
   },
-	
-  	buttonText: {
+	buttonText: {
 	  	fontSize:25,
     	color: 'white'
   },
-	
-	
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center"
+  },
+	blurView: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    bottom: 0,
+    right: 0,
+  },
 });
 
-export class SaveButton extends Component {
-	constructor(){
-		super();
-		this.state ={
-			balanceStatus:false,
-			textStatus:true,
-			addStatus:false,
-		}
-  }
-	
-	onPressSaveButton = () =>{
-    	if(this.state.balanceStatus === true)
-		  {
-			this.setState({balanceStatus: false})
-			  this.setState({textStatus: true})
-		  }
-		  else
-		  {
-			this.setState({balanceStatus: true})
-			  this.setState({textStatus: false})
-		  }
-  }
-	
-	render(){
-  return (
-		  <View>
-				<TouchableHighlight onPress={this.onPressSaveButton} underlayColor='Colors.grey200'>
-				  <View style={styles.button}>
-	  				{
-					this.state.textStatus ? <Text style={styles.buttonText}>View</Text> : null
-	  				}
-	  
-	  				{
-	  				this.state.balanceStatus ? <Text style= {styles.buttonText}>INR 6,234</Text> : null
-	  				}
-	  
-	  				{
-					this.state.textStatus ?<Text style={styles.buttonText}>Balance</Text> : null
-	  				}
-				  </View>
-				</TouchableHighlight>
-	  		</View>
-  );
-}
-}
+
