@@ -1,11 +1,13 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {Icon} from 'react-native-vector-icons';
 import {IconButton} from 'react-native-paper';
 
 import {Home} from '../Home';
 import {Settings} from '../Settings';
 import {TradingAccount} from '../TradingAccount';
 import {Invest} from '../Invest';
+import {Savings} from '../Savings'; 
 
 const Tab = createBottomTabNavigator();
 
@@ -47,6 +49,21 @@ export function Entry({navigation}) {
         component={Invest}
         options={{
           tabBarLabel: 'Invest',
+          tabBarIcon: ({color, size}) => (
+            <IconButton
+              style={{flex: 1, padding: 0, margin: 0}}
+              icon="coin"
+              color={color}
+              size={size}
+            />
+          ),
+        }}
+      />
+	<Tab.Screen
+        name="Savings"
+        component={Savings}
+        options={{
+          tabBarLabel: 'Savings',
           tabBarIcon: ({color, size}) => (
             <IconButton
               style={{flex: 1, padding: 0, margin: 0}}
