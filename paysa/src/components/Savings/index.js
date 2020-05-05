@@ -3,9 +3,9 @@ import {StyleSheet,View,Text,TouchableHighlight,ScrollView} from 'react-native';
 import {Colors} from 'react-native-paper';
 
 import {commonStyles} from '../Common/common.styles';
-import {SaveButton} from '../Savings/savebutton';
+import {BalanceButton} from '../Savings/balancebutton';
 import {Lists} from '../Savings/list';
-import {AddButton} from '../Savings/addbutton';
+import {SaveButton} from '../Savings/savebutton';
 
 const styles = StyleSheet.create({
 	
@@ -51,8 +51,8 @@ export function Savings(){
   return (
 	  <View style={{flex:1,backgroundColor:"#fff"}}>
 	  	<View style={styles.buttonContainer}>
-			<SaveButton/>
-	  		<AddButton/>
+			<BalanceButton/>
+	  		<SaveButton/>
 	  	</View>
 			<View style = {styles.listContainer}>
 	  			<View style = {styles.historyContainer}>
