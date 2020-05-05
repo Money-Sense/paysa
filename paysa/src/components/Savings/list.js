@@ -34,6 +34,9 @@ export function Lists(){
     				title={item.name}
 	  				description={item.id}
     				left={props => <List.Icon {...props} icon="bank" />}
+					onPress={() => {
+                alert('Deposit Details will be displayed');
+              }}
   				/>
   			))
 	);
