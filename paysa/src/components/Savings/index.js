@@ -11,13 +11,13 @@ const styles = StyleSheet.create({
 	
 	buttonContainer:{
 		flex:1,
-		flexDirection: 'row',
+		flexDirection: 'column',
     	alignItems: 'center',
-    	justifyContent: 'center',
+    	// justifyContent: 'center',
 	},
 
 	listContainer:{
-		flex:2,
+		flex:1,
 		margin:20,
 		height:460,
 		backgroundColor:'#fff',
@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
     	shadowRadius: 2,
 	},
 	
-	
 	historyContainer: {
+		// flex: 1,
 		justifyContent:'center',
 		alignItems:'center',
 		backgroundColor:'#663BFF',
